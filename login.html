@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - TopicWise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login to <span class="highlight">TopicWise</span></h2>
+        
+        <div class="toggle-buttons">
+            <button id="studentBtn" class="toggle-btn active" onclick="toggleRole('student')">Student</button>
+            <button id="parentBtn" class="toggle-btn" onclick="toggleRole('parent')">Parent</button>
+        </div>
+
+        <p id="login-text">Enter registered student’s mobile number</p>
+
+        <input type="text" id="mobile-input" placeholder="Enter Mobile Number">
+        <button class="next-btn">Next</button>
+    </div>
+
+    <script>
+        function toggleRole(role) {
+            if (role === 'student') {
+                document.getElementById('studentBtn').classList.add('active');
+                document.getElementById('parentBtn').classList.remove('active');
+                document.getElementById('login-text').innerText = "Enter registered student’s mobile number";
+            } else {
+                document.getElementById('parentBtn').classList.add('active');
+                document.getElementById('studentBtn').classList.remove('active');
+                document.getElementById('login-text').innerText = "Enter registered parent’s mobile number";
+            }
+        }
+    </script>
+</body>
+</html>
