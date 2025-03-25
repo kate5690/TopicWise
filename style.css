@@ -40,19 +40,22 @@ nav ul li a {
 
 /* Hero Section */
 .hero {
-    background: url('images/background.jpg') no-repeat center center/cover;
-    color: white;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 100px 20px;
+    overflow: hidden;
+    background: url('images/background.jpg') no-repeat center center/cover;
 }
 
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 1.2rem;
+.hero-text {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
 }
 
 .cta-btn {
@@ -88,17 +91,18 @@ footer {
     background: #333;
     color: white;
 }
-/* Form Styling */
+
+/* Form Styling (General) */
 form {
     max-width: 400px;
     margin: 20px auto;
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 input, select, textarea {
     padding: 10px;
-    margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -115,31 +119,94 @@ button {
 button:hover {
     background: #0056b3;
 }
-/* Hero Section */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+/* ====== LOGIN PAGE (Student/Parent Toggle) ====== */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    overflow: hidden;
 }
 
-/* Background Image */
-.hero-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+.login-container h1 {
+    font-size: 1.8rem;
 }
 
-/* Text Background Shape */
-.hero-text {
-    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+.toggle-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.toggle-btn.active {
+    background: #007BFF;
+    color: white;
+    border-color: #007BFF;
+}
+
+/* ====== ENROLLMENT FORM ====== */
+.enroll-section {
+    text-align: center;
+    padding: 40px;
+}
+
+.enroll-section h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.enroll-section p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.enroll-form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: white;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.enroll-form label {
+    text-align: left;
+    font-weight: bold;
+}
+
+.enroll-form input, .enroll-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.enroll-form .cta-btn {
+    background-color: #007BFF;
     color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.enroll-form .cta-btn:hover {
+    background-color: #0056b3;
 }
